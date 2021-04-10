@@ -18,8 +18,8 @@
 
   <div id="app">
     <div>{{word}}</div><!--1-->
-    <form v-on:submit="onSubmitForm">
-      <input type ="text" v-model="value" ref="answer"><!--2-->
+    <form v-on:submit="onSubmitForm">//v로 시작하는 것들 뒤에 "" 따옴표들은 vue로 접근이 가능하다는 뜻.
+      <input type ="text" v-model="value" ref="answer"><!--2-->//ref : 어쩔수없이 접근해야할때 태그에 이름을 붙여주는 용도 ,데이터를 바꾸는게아닌 애매한 이벤트를 사용할때 
       <button type="submit">입력</button>
     </form>
     <div id="result">{{result}}</div><!--3-->
@@ -27,11 +27,12 @@
 </body>
 </html>
 
+//0410 component는 'data:'를 중요하게 본다
 <script>
 new Vue({
-  el: '#app',
+  el: '#app',//vue가 app을 통제할수 있도록 해준다.
   data:{
-  	word:'제로초',
+  	word:'제로초',//vue는 데이터만 관리한다.
     result:'',
     value:''
   },
